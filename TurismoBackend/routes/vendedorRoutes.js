@@ -11,6 +11,7 @@ router.get('/:id', vendedorController.obtenerVendedor);
 
 // Rutas que requieren código de acceso
 router.put('/:id', vendedorController.actualizarPerfilVendedor);
+router.delete('/:id', vendedorController.eliminarVendedor);
 
 module.exports = router;
 
