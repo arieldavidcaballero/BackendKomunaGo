@@ -102,13 +102,16 @@ const vendedorController = {
                 redes_sociales
             } = req.body;
 
+            console.log('Received payload in actualizarPerfilVendedor:', req.body);
+            console.log('Received fotos value:', fotos);
+
             const result = await db.query(
                 `UPDATE vendedores 
                 SET cupo_personas = $1,
                     horario = $2,
                     ubicacion = $3,
                     menu = $4,
-                    fotos = $5,
+                    fotos = $5::TEXT,
                     redes_sociales = $6,
                     actualizado_en = CURRENT_TIMESTAMP
                 WHERE id = $7
